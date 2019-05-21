@@ -1,0 +1,262 @@
+include "109.mayu"
+# ============================================================
+keymap Global
+# ============================================================
+# ------------------------------
+# キーの置き換え
+# ------------------------------
+# 英数(CapsLock) -> Ctrlキー
+mod control += !英数
+key R-*英数 = *LeftControl
+
+# 変換 -> M0
+mod mod0 += !変換
+key R-*変換 = &Ignore
+
+# ひらがな -> M1
+mod mod1 += !ひらがな
+key R-*ひらがな = &Ignore
+
+# 無変換 -> M2
+mod mod2 += !無変換
+key R-*無変換 = &Ignore
+
+# ------------------------------
+# 文字変換
+# ------------------------------
+# 全角入力
+key *IC-M0-v = &SetImeStatus(on)
+key *IC-M0-s = &SetImeStatus(on)
+
+# 半角入力
+key *IC-M0-c = &SetImeStatus(off)
+key *IC-M0-d = &SetImeStatus(off)
+
+# 半角変換
+key IC-M0-a = F10 Enter
+
+# カタカナ変換
+key IC-M0-z = F7 Enter
+
+# ------------------------------
+# 移動
+# ------------------------------
+# 左
+key *IC-M0-*C-*A-*S-h = *C-*A-*S-Left
+
+# 下
+key *IC-M0-*C-*A-*S-j = *C-*A-*S-Down
+
+# 上
+key *IC-M0-*C-*A-*S-k = *C-*A-*S-Up
+
+# 右
+key *IC-M0-*C-*A-*S-l = *C-*A-*S-Right
+
+# Home
+key *IC-M0-*C-*A-*S-u = *C-*A-*S-Home
+
+# End
+key *IC-M0-*C-*A-*S-i = *C-*A-*S-End
+
+# PageUp
+key *IC-M0-CommercialAt = &MouseWheel(100)
+
+# PageDown
+key *IC-M0-RightSquareBracket = &MouseWheel(-100)
+
+# ------------------------------
+# 編集
+# ------------------------------
+# Delete
+key *IC-*C-*A-*S-M0-e = *S-Delete
+
+# BackSpace
+key *IC-*C-*A-*S-M0-c = BackSpace
+
+# Copy
+key *IC-M0-y = C-c
+
+# Paste
+key *IC-M0-v = C-v
+
+# ------------------------------
+# 画面操作
+# ------------------------------
+# 閉じる(Ctrl+W)
+key M0-w = C-w
+
+# 閉じる(Alt+F4)
+key C-q = A-F4
+key M0-q = A-F4
+
+# タブ切り替え
+key *IC-M0-o = C-S-Tab
+key *IC-M0-p = C-Tab
+key *IC-M0-M2-h = C-S-Tab
+key *IC-M0-M2-l = C-Tab
+
+# ウィンドウをピクセル移動
+key M0-M2-n = &WindowMove(-40,0)
+key M0-M2-m = &WindowMove(0,40)
+key M0-M2-Comma = &WindowMove(0,-40)
+key M0-M2-FullStop = &WindowMove(40,0)
+
+# ウィンドウ最大
+key *IC-M0-b = &WindowMaximize
+
+# ウィンドウ最小
+key M0-Colon = &WindowMinimize
+
+# ------------------------------
+# マウス操作
+# ------------------------------
+# マウス移動
+key M0-n = &MouseMove(-95,0)
+key M0-m = &MouseMove(0,95)
+key M0-Comma = &MouseMove(0,-95)
+key M0-FullStop = &MouseMove(95,0)
+key M0-C-n = &MouseMove(-19,0)
+key M0-C-m = &MouseMove(0,19)
+key M0-C-Comma = &MouseMove(0,-19)
+key M0-C-FullStop = &MouseMove(19,0)
+key M0-S-n = &MouseMove(-10,0)
+key M0-S-m = &MouseMove(0,10)
+key M0-S-Comma = &MouseMove(0,-10)
+key M0-S-FullStop = &MouseMove(10,0)
+
+# マウス左クリック
+key M0-*IC-*C-~A-*S-Solidus = *C-*S-LButton
+
+# マウス右クリック
+key M0-*IC-*C-~A-*S-ReverseSolidus = *C-*S-RButton
+
+# ------------------------------
+# ファンクションキー
+# ------------------------------
+key *IC-M0-*C-*A-*S-_1 = *C-*A-*S-F1
+key *IC-M0-*C-*A-*S-_2 = *C-*A-*S-F2
+key *IC-M0-*C-*A-*S-_3 = *C-*A-*S-F3
+key *IC-M0-*C-*A-*S-_4 = *C-*A-*S-F4
+key *IC-M0-*C-*A-*S-_5 = *C-*A-*S-F5
+key *IC-M0-*C-*A-*S-_6 = *C-*A-*S-F6
+key *IC-M0-*C-*A-*S-_7 = *C-*A-*S-F7
+key *IC-M0-*C-*A-*S-_8 = *C-*A-*S-F8
+key *IC-M0-*C-*A-*S-_9 = *C-*A-*S-F9
+key *IC-M0-*C-*A-*S-_0 = *C-*A-*S-F10
+key *IC-M0-*C-*A-*S-HyphenMinus = *C-*A-*S-F11
+key *IC-M0-*C-*A-*S-CircumflexAccent = *C-*A-*S-F12
+
+# ------------------------------
+# その他
+# ------------------------------
+# ESC
+key *IC-M0-f = ESC &SetImeStatus(off)
+key *IC-M0-S-f = ESC
+
+# Enter
+key *IC-*M0-Semicolon = Enter
+key *IC-*M2-*C-Semicolon = *C-Enter
+
+# セミコロン
+key *IC-C-Semicolon = Semicolon
+key *IC-S-C-Semicolon = S-Semicolon
+
+# タブ
+key *IC-M0-*C-*A-*S-g = *C-*A-*S-Tab
+
+# F5
+key *IC-M0-*C-*A-*S-r = C-*A-*S-F5
+
+# 右クリックメニュー表示
+key *IC-M0-LeftSquareBracket = Applications
+key *IC-M0-x = Applications
+
+# ランチャー(ランチャー側で設定必要)
+key *IC-M0-t = C-A-S-F6
+key *IC-M2-_1 = C-A-S-F6
+key *IC-M2-_2 = C-A-S-F7
+key *IC-M2-_3 = C-A-S-F8
+
+# システムのプロパティ(sysdm.cpl)
+key W-s = W-Pause
+
+# ------------------------------
+# ひらがなキー(M1)
+# ------------------------------
+# 数字入力
+key M1-*IC-*C-*S-a = *C-*S-_1
+key M1-*IC-*C-*S-s = *C-*S-_2
+key M1-*IC-*C-*S-d = *C-*S-_3
+key M1-*IC-*C-*S-f = *C-*S-_4
+key M1-*IC-*C-*S-g = *C-*S-_5
+key M1-*IC-*C-*S-h = *C-*S-_6
+key M1-*IC-*C-*S-j = *C-*S-_7
+key M1-*IC-*C-*S-k = *C-*S-_8
+key M1-*IC-*C-*S-l = *C-*S-_9
+key M1-*IC-*C-*S-Semicolon = *C-*S-_0
+key M1-*IC-*C-*S-Colon = *C-*S-HyphenMinus
+key M1-*IC-*C-*S-RightSquareBracket = *C-*S-CircumflexAccent
+
+# ファンクションキー
+key M1-*IC-*C-A-*S-a = *C-*S-F1
+key M1-*IC-*C-A-*S-s = *C-*S-F2
+key M1-*IC-*C-A-*S-d = *C-*S-F3
+key M1-*IC-*C-A-*S-f = *C-*S-F4
+key M1-*IC-*C-A-*S-g = *C-*S-F5
+key M1-*IC-*C-A-*S-h = *C-*S-F6
+key M1-*IC-*C-A-*S-j = *C-*S-F7
+key M1-*IC-*C-A-*S-k = *C-*S-F8
+key M1-*IC-*C-A-*S-l = *C-*S-F9
+key M1-*IC-*C-A-*S-Semicolon = *C-*S-F10
+key M1-*IC-*C-A-*S-Colon = *C-*S-F11
+key M1-*IC-*C-A-*S-RightSquareBracket = *C-*S-F12
+
+# マウスホイール
+key M1-*IC-u = &MouseWheel(-120)
+key M1-*IC-i = &MouseWheel(120)
+
+# ------------------------------
+# 無変換キー(M2)
+# ------------------------------
+# ウィンドウを端に移動
+key *IC-M0-M2-C-h = &WindowClingToLeft
+key *IC-M0-M2-C-j = &WindowClingToBottom
+key *IC-M0-M2-C-k = &WindowClingToTop
+key *IC-M0-M2-C-l = &WindowClingToRight
+
+# ウィンドウ切り替え
+key *IC-M2-a = A-S-Tab
+key *IC-M2-s = A-S-Tab
+key *IC-M2-d = A-Tab
+key *IC-M2-f = A-Tab
+key *IC-M2-*S-Tab = A-*S-Tab
+
+# Window固定
+key *IC-M2-v = &WindowToggleTopMost
+
+# ------------------------------
+# 設定ファイル読み込み
+# ------------------------------
+key M0-M1-Enter = &LoadSetting() &HelpMessage(,"再読込")
+
+# ============================================================
+window EXCEL /excel/ : Global
+# ============================================================
+key *IC-M0-M2-h = C-PageUp
+key *IC-M0-M2-l = C-PageDown
+
+# ============================================================
+window cmd /ConsoleWindowClass/ : Global
+# ============================================================
+# IME切り替えにAltを使わない
+key 半角/全角 = A-半角/全角
+key M0-s = A-半角/全角
+key M0-d = A-半角/全角
+
+# 貼りつけ
+key C-v = A-Space e p
+
+# exit
+key M0-q = e x i t Enter
+key C-q = e x i t Enter
